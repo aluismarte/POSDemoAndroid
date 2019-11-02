@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         openLogin()
                     }
-                }, TimeUnit.SECONDS.toMillis(10)
+                }, TimeUnit.SECONDS.toMillis(1)
         )
     }
 
