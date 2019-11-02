@@ -60,25 +60,23 @@ class IntroActivity : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
         addBottomDots(0)
         btnSkip.setOnClickListener {
-            openPrivacyPolicy()
+            openPrivacy()
         }
         btnNext.setOnClickListener {
             val current = vpContent.currentItem + 1
             if (current < layouts.size) {
                 vpContent.currentItem = current
             } else {
-                openPrivacyPolicy()
+                openPrivacy()
             }
         }
-        introPageAdapter =
-                IntroPageAdapter(this, layouts)
+        introPageAdapter = IntroPageAdapter(this, layouts)
         vpContent.adapter = introPageAdapter
         vpContent.addOnPageChangeListener(viewPagerPageChangeListener)
     }
 
-    private fun openPrivacyPolicy() {
-        val sharedPreferencesTool =
-                SharedPreferencesTool(this)
+    private fun openPrivacy() {
+        val sharedPreferencesTool = SharedPreferencesTool(this)
         sharedPreferencesTool.showIntro = false
         val intent = Intent(this, PrivacyActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
