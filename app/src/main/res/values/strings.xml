@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">POSDemoAndroid</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+
+    <string name="slide_intro_1_title">Secure</string>
+    <string name="slide_intro_1_description">Is secure, believe me</string>
+
+    <string name="slide_intro_2_title">Fast</string>
+    <string name="slide_intro_2_description">Fast like a thunder</string>
+
+    <string name="slide_intro_3_title">innovation</string>
+    <string name="slide_intro_3_description">Prepared for do something amazing!</string>
 </resources>
