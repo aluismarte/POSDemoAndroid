@@ -4,6 +4,6 @@
     android:background="@color/backgroundDefault"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity">
+    tools:context=".ui.PrivacyActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
