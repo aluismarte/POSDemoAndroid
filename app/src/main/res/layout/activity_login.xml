@@ -10,7 +10,7 @@
         android:id="@+id/tvVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/login_horizontal_margin"
+        android:layout_marginEnd="10dp"
         android:text="@string/version_app"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
