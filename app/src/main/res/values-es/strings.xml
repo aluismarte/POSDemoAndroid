@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">Entrar</string>
+    <string name="next">Siguiente</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="read_privacy_policy">leído</string>
+    <string name="skip">Saltar</string>
+    <string name="slide_intro_1_description">Es seguro, creeme</string>
+    <string name="slide_intro_1_title">Seguro</string>
+    <string name="slide_intro_2_description">Rápido como un rayo</string>
+    <string name="slide_intro_2_title">Rápido</string>
+    <string name="slide_intro_3_description">Preparado para hacer cosas increibles!</string>
+    <string name="slide_intro_3_title">Innovación</string>
+    <string name="start">Empezar</string>
+    <string name="username_hint">Usuario</string>
+    <string name="version_app">Versión</string>
+</resources>
