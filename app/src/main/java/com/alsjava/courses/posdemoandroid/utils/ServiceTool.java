@@ -13,6 +13,7 @@ import java.io.IOException;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -70,12 +71,17 @@ public class ServiceTool {
     }
 
     public void products(ProductRequest productRequest, final CallBack<ProductResponse> callBack) {
-        FormBody.Builder builder = new FormBody.Builder()
-                .add(Constants.SESSION_FORM_RESOURCE, Constants.get().getSession())
-                .add(Constants.DATA_FORM_RESOURCE, Constants.get().stringify(productRequest));
+        HttpUrl httpUrl = new HttpUrl.Builder()
+                .scheme("http")
+                .host("192.168.0.4")
+                .port(8080)
+                .addPathSegments("/api/products")
+                .addQueryParameter(Constants.SESSION_FORM_RESOURCE, Constants.get().getSession())
+                .addQueryParameter(Constants.DATA_FORM_RESOURCE, Constants.get().stringify(productRequest))
+                .build();
         Request request = new Request.Builder()
-                .url(Constants.SERVER_URL + "/products")
-                .post(builder.build())
+                .url(httpUrl)
+                .get()
                 .build();
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
