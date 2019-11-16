@@ -1,5 +1,6 @@
 package com.alsjava.courses.posdemoandroid.utils;
 
+import com.alsjava.courses.posdemoandroid.utils.db.POSDemoDB;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -18,6 +19,8 @@ public class Constants {
     private String session = "";
     private Long terminal = -1L;
     private String terminalName = "";
+
+    private POSDemoDB posDemoDB;
 
     private final Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
@@ -58,6 +61,14 @@ public class Constants {
 
     public void setTerminalName(String terminalName) {
         this.terminalName = terminalName;
+    }
+
+    public POSDemoDB getPosDemoDB() {
+        return posDemoDB;
+    }
+
+    public void setPosDemoDB(POSDemoDB posDemoDB) {
+        this.posDemoDB = posDemoDB;
     }
 
     public String stringify(Object object) {

@@ -21,4 +21,8 @@
 
     <string name="read_privacy_policy">I Read!</string>
     <string name="login">Login</string>
+
+    <string name="error_login">Error Login</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
 </resources>

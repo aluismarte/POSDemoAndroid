@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import com.alsjava.courses.posdemoandroid.ui.IntroActivity
 import com.alsjava.courses.posdemoandroid.ui.LoginActivity
 import com.alsjava.courses.posdemoandroid.ui.PrivacyActivity
+import com.alsjava.courses.posdemoandroid.utils.Constants
+import com.alsjava.courses.posdemoandroid.utils.NetworkTool
 import com.alsjava.courses.posdemoandroid.utils.SharedPreferencesTool
+import com.alsjava.courses.posdemoandroid.utils.db.POSDemoDB
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +27,15 @@ class MainActivity : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
         val sharedPreferencesTool = SharedPreferencesTool(this)
+        // Subo el net watcher
+        NetworkTool.get().prepare(this)
+        // Instancio la DB
+        val databaseBuilder = Room.databaseBuilder(
+                applicationContext,
+                POSDemoDB::class.java, POSDemoDB.DB_NAME
+        )
+        Constants.get().posDemoDB = databaseBuilder.build()
+        // Espero unos segundos para mostrar mi logo
         Handler().postDelayed(
                 {
                     if (sharedPreferencesTool.showIntro) {

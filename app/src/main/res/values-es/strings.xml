@@ -14,4 +14,7 @@
     <string name="start">Empezar</string>
     <string name="username_hint">Usuario</string>
     <string name="version_app">Versión</string>
+    <string name="offline">Fuera de linea</string>
+    <string name="online">En linea</string>
+    <string name="error_login">Error logueando</string>
 </resources>
