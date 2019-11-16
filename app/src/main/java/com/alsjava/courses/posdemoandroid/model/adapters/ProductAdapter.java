@@ -11,7 +11,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsjava.courses.posdemoandroid.R;
-import com.alsjava.courses.posdemoandroid.model.Product;
+import com.alsjava.courses.posdemoandroid.model.api.ProductAPI;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
@@ -24,7 +24,7 @@ import java.util.List;
 public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Activity activity;
-    private final List<Product> data = new ArrayList<>();
+    private final List<ProductAPI> data = new ArrayList<>();
 
     public ProductAdapter(@NonNull Activity activity) {
         this.activity = activity;
@@ -48,7 +48,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         return data.size();
     }
 
-    public void loadData(List<Product> products) {
+    public void loadData(List<ProductAPI> products) {
         data.clear();
         if (products != null) {
             data.addAll(products);
@@ -61,7 +61,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private AppCompatTextView tvName;
         private AppCompatTextView tvPrice;
 
-        private Product currentItem;
+        private ProductAPI currentItem;
 
         ProductViewHolder(@NonNull View itemView) {
             super(itemView);

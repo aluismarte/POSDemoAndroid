@@ -1,6 +1,6 @@
 package com.alsjava.courses.posdemoandroid.model.communication.response;
 
-import com.alsjava.courses.posdemoandroid.model.Product;
+import com.alsjava.courses.posdemoandroid.model.api.ProductAPI;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import java.util.List;
  */
 public class ProductResponse extends Response {
 
-    private List<Product> products;
+    private List<ProductAPI> products;
 
-    public List<Product> getProducts() {
+    public List<ProductAPI> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(List<ProductAPI> products) {
         this.products = products;
     }
 }

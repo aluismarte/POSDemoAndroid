@@ -5,15 +5,15 @@ package com.alsjava.courses.posdemoandroid.model.communication.response;
  */
 public abstract class Response {
 
-    private int id;
+    private int code;
     private String description;
 
-    public int getId() {
-        return id;
+    public int getCode() {
+        return code;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public String getDescription() {

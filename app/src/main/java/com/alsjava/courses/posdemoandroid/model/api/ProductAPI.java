@@ -1,9 +1,9 @@
-package com.alsjava.courses.posdemoandroid.model;
+package com.alsjava.courses.posdemoandroid.model.api;
 
 /**
  * Created by aluis on 11/9/19.
  */
-public class Product {
+public class ProductAPI {
 
     private String name;
     private long quantity;

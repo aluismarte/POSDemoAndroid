@@ -3,10 +3,13 @@ package com.alsjava.courses.posdemoandroid.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.alsjava.courses.posdemoandroid.BuildConfig
 import com.alsjava.courses.posdemoandroid.R
+import com.alsjava.courses.posdemoandroid.model.communication.request.LoginRequest
+import com.alsjava.courses.posdemoandroid.utils.Constants
+import com.alsjava.courses.posdemoandroid.utils.ServiceTool
+import com.alsjava.courses.posdemoandroid.utils.security.HashTools
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -24,9 +27,13 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val username = etUsername.text.toString()
             val password = etPassword.text.toString()
-            if (username.isNotEmpty() && password.isNotEmpty()) {
-                Toast.makeText(this, "Me dieron click", Toast.LENGTH_LONG).show()
-                openApp()
+            ServiceTool.get().login(LoginRequest(username, HashTools.encodeSHA512(password))) {
+                if (it != null && it.code == 0) {
+                    Constants.get().session = it.session;
+                    Constants.get().terminal = it.terminal;
+                    Constants.get().terminalName = it.terminalName;
+                    openApp()
+                }
             }
         }
     }

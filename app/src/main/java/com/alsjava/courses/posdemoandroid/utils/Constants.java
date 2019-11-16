@@ -16,6 +16,8 @@ public class Constants {
     public static final String DATA_FORM_RESOURCE = "data";
 
     private String session = "";
+    private Long terminal = -1L;
+    private String terminalName = "";
 
     private final Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
@@ -40,6 +42,22 @@ public class Constants {
 
     public void setSession(String session) {
         this.session = session;
+    }
+
+    public Long getTerminal() {
+        return terminal;
+    }
+
+    public void setTerminal(Long terminal) {
+        this.terminal = terminal;
+    }
+
+    public String getTerminalName() {
+        return terminalName;
+    }
+
+    public void setTerminalName(String terminalName) {
+        this.terminalName = terminalName;
     }
 
     public String stringify(Object object) {
