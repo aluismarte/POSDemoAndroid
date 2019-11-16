@@ -14,8 +14,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_margin="15dp"
             android:scaleType="fitXY" />
 
@@ -40,6 +40,14 @@
                 android:text="Price"
                 android:textSize="30dp"
                 android:textStyle="italic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

@@ -5,10 +5,20 @@ package com.alsjava.courses.posdemoandroid.model.api;
  */
 public class ProductAPI {
 
+    private transient boolean selected = false;
+
     private String name;
     private long quantity;
     private double price;
     private String image; // Imagen en Base64
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
 
     public String getName() {
         return name;
@@ -40,5 +50,15 @@ public class ProductAPI {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductAPI{" +
+                "name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.alsjava.courses.posdemoandroid.R
 import com.alsjava.courses.posdemoandroid.model.adapters.ProductAdapter
 import com.alsjava.courses.posdemoandroid.model.communication.request.ProductRequest
+import com.alsjava.courses.posdemoandroid.ui.dialog.InvoiceDialog
 import com.alsjava.courses.posdemoandroid.utils.ServiceTool
 import kotlinx.android.synthetic.main.activity_app.*
 
@@ -31,12 +32,15 @@ class AppActivity : AppCompatActivity() {
         rvProducts.addItemDecoration(
                 DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
         )
-
         ServiceTool.get().products(ProductRequest()) {
             productAdapter.loadData(it?.products)
             runOnUiThread {
                 productAdapter.notifyDataSetChanged()
             }
+        }
+        btnInvoice.setOnClickListener {
+            val invoiceDialog = InvoiceDialog(this);
+            invoiceDialog.show()
         }
     }
 }

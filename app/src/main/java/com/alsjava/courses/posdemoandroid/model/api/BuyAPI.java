@@ -32,4 +32,13 @@ public class BuyAPI {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "BuyAPI{" +
+                "product=" + product +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
+    }
 }
