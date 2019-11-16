@@ -23,7 +23,6 @@
 }
 
 # GSON
--keep class com.alsnor.libs.unlottool.** { <fields>; } # TODO eficientizar, simple para release
 -keepattributes Signature
 -keepattributes *Annotation*
 -dontwarn sun.misc.**
@@ -33,3 +32,7 @@
 -keepclassmembers,allowobfuscation class * {
   @com.google.gson.annotations.SerializedName <fields>;
 }
+
+# My Code
+-keep class com.alsjava.courses.posdemoandroid.model.api.** { <fields>; }
+-keep class com.alsjava.courses.posdemoandroid.model.communication.api.** { <fields>; }
